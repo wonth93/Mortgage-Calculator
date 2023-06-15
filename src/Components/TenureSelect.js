@@ -1,4 +1,6 @@
-function TenureSelect() {
+import React from "react";
+
+const TenureSelect = () => {
   return (
     <div>
       <p>

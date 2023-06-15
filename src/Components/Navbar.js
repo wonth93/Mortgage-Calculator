@@ -1,7 +1,8 @@
+import React from "react";
 import { AppBar,Toolbar, Typography } from "@mui/material";
 import Container from "@mui/system/Container";
 
-function Navbar() {
+const Navbar = () => {
   return (
     <AppBar position="static">
       <Container maxWidth="xl">

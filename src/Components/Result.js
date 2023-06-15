@@ -1,4 +1,6 @@
-function Result() {
+import React from "react";
+
+const Result = () => {
   return (
     <div>
       <p>
