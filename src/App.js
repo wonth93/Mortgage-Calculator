@@ -1,12 +1,9 @@
-
+import Navbar from "./Components/Navbar";
 
 function App() {
   return (
     <div>
-      <header>
-        <p>Creating a mortgage Calculator!</p>
-        <p>Please wait...</p>
-      </header>
+      <Navbar />
     </div>
   );
 }
