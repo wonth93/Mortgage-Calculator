@@ -1,7 +1,5 @@
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
+import { AppBar,Toolbar, Typography } from "@mui/material";
+import Container from "@mui/system/Container";
 
 function Navbar() {
   return (
