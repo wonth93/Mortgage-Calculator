@@ -5,8 +5,8 @@ const SliderComponent = ({defaultValue, min, max, label, unit, onChange, amount,
   return (
     <Stack my={1.4}>
       <Stack gap={1}>
-        <Typography variant="subtitle1">{/* {label} */} Something somthing value</Typography>
-        <Typography variant="h5">{/* {unit} {amount} */}$ x,xxx.yy</Typography>
+        <Typography variant="subtitle1">{label}</Typography>
+        <Typography variant="h5">{unit} {amount}</Typography>
       </Stack>
       <Slider 
         defaultValue={defaultValue}
@@ -20,8 +20,8 @@ const SliderComponent = ({defaultValue, min, max, label, unit, onChange, amount,
         marks
       />
       <Stack direction="row" justifyContent="space-between">
-        <Typography variant="caption">{/* {unit} {min} */}$ x,xxx.yy</Typography>
-        <Typography variant="caption">{/* {unit} {max} */}$ x,xxx.yy</Typography>
+        <Typography variant="caption">{unit} {min}</Typography>
+        <Typography variant="caption">{unit} {max}</Typography>
       </Stack>
     </Stack>
   )
