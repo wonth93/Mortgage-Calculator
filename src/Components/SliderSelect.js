@@ -1,11 +1,10 @@
 import React from "react";
+import SliderComponent from "./Common/SliderComponent";
 
 const SliderSelect = () => {
   return (
     <div>
-      <p>
-        This is SliderSelect
-      </p>
+      <SliderComponent />
     </div>
   );
 }
