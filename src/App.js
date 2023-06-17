@@ -26,13 +26,19 @@ function App({ dark }) {
     interestRate: 5,
   });
 
+  const [formattedData, setFormattedData] = useState({
+    formattedHomeValue: data.homeValue.toLocaleString("en-US"),
+    formattedDownPayment: data.downPayment.toLocaleString("en-US"),
+    formattedLoanAmount: data.loanAmount.toLocaleString("en-US"),
+  })
+
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
         <Container maxWidth="xl" sx={{marginTop:4}}>
           <Grid container spacing={5} alignItems="center">
             <Grid item xs={12} md ={6}>
-              <SliderSelect data={data} setData={setData} />
+              <SliderSelect data={data} setData={setData} formattedData={formattedData} setFormattedData={setFormattedData} />
               <TenureSelect data={data} setData={setData} />
             </Grid>
             <Grid item xs={12} md ={6}>

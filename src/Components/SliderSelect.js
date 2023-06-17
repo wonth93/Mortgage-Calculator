@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import SliderComponent from "./Common/SliderComponent";
 
-const SliderSelect = ({ data, setData }) => {
+const SliderSelect = ({ data, setData, formattedData, setFormattedData }) => {
   const bank_limit = 5000000;
+  const formattedBankLimit = bank_limit.toLocaleString("en-US");
+
   return (
     <div>
       <SliderComponent
@@ -13,6 +15,11 @@ const SliderSelect = ({ data, setData }) => {
             downPayment: (0.2 * value).toFixed(0),
             loanAmount: (0.8 * value).toFixed(0),
           })
+          setFormattedData({
+            formattedHomeValue: value.toLocaleString("en-US"),
+            formattedDownPayment: (0.2 * value).toLocaleString("en-US"),
+            formattedLoanAmount: (0.8 * value).toLocaleString("en-US"),
+          })
         }}
         defaultValue={data.homeValue}
         min={100000}
@@ -21,13 +28,22 @@ const SliderSelect = ({ data, setData }) => {
         unit="$"
         amount={data.homeValue}
         value={data.homeValue}
-        steps={50000} />
+        steps={50000}
+        formattedAmount={formattedData.formattedHomeValue}
+        formattedMax={formattedBankLimit} />
+
+
       <SliderComponent
         onChange={(e, value) => {
           setData({
             ...data,
             downPayment: value.toFixed(0),
             loanAmount: (data.homeValue - value).toFixed(0),
+          })
+          setFormattedData({
+            ...formattedData,
+            formattedDownPayment: value.toLocaleString("en-US"),
+            formattedLoanAmount: (data.homeValue - value).toLocaleString("en-US"),
           })
         }}
         defaultValue={data.downPayment}
@@ -37,13 +53,22 @@ const SliderSelect = ({ data, setData }) => {
         unit="$"
         amount={data.downPayment}
         value={data.downPayment}
-        steps={10000} />
+        steps={10000}
+        formattedAmount={formattedData.formattedDownPayment}
+        formattedMax={formattedData.formattedHomeValue} />
+
+
       <SliderComponent
         onChange={(e, value) => {
           setData({
             ...data,
             loanAmount: value.toFixed(0),
             downPayment: (data.homeValue - value).toFixed(0),
+          })
+          setFormattedData({
+            ...formattedData,
+            formattedLoanAmount: value.toLocaleString("en-US"),
+            formattedDownPayment: (data.homeValue - value).toLocaleString("en-US"),
           })
         }}
         defaultValue={data.loanAmount}
@@ -53,7 +78,11 @@ const SliderSelect = ({ data, setData }) => {
         unit="$"
         amount={data.loanAmount}
         value={data.loanAmount}
-        steps={10000} />
+        steps={10000}
+        formattedAmount={formattedData.formattedLoanAmount}
+        formattedMax={formattedData.formattedHomeValue} />
+
+
       <SliderComponent
         onChange={(e, value) => {
           setData({
@@ -65,10 +94,12 @@ const SliderSelect = ({ data, setData }) => {
         min={2}
         max={18}
         label="Interest Rate"
-        unit="%"
+        percent = "%"
         amount={data.interestRate}
         value={data.interestRate}
-        steps={0.5} />
+        steps={0.5}
+        formattedAmount={data.interestRate}
+        formattedMax={18} />
     </div>
   );
 }
