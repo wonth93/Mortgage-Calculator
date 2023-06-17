@@ -20,7 +20,7 @@ const SliderComponent = ({defaultValue, min, max, label, unit, onChange, amount,
         marks
       />
       <Stack direction="row" justifyContent="space-between">
-        <Typography variant="caption">{unit} {min}</Typography>
+        <Typography variant="caption">{unit} {min.toLocaleString("en-US")}</Typography>
         <Typography variant="caption">{unit} {max}</Typography>
       </Stack>
     </Stack>

@@ -2,7 +2,7 @@ import React from "react";
 import SliderComponent from "./Common/SliderComponent";
 
 const SliderSelect = ({ data, setData }) => {
-  const bank_limit = 10000;
+  const bank_limit = 5000000;
   return (
     <div>
       <SliderComponent
@@ -15,13 +15,13 @@ const SliderSelect = ({ data, setData }) => {
           })
         }}
         defaultValue={data.homeValue}
-        min={1000}
+        min={100000}
         max={bank_limit}
         label="Property Value"
         unit="$"
         amount={data.homeValue}
         value={data.homeValue}
-        steps={100} />
+        steps={50000} />
       <SliderComponent
         onChange={(e, value) => {
           setData({
@@ -31,13 +31,13 @@ const SliderSelect = ({ data, setData }) => {
           })
         }}
         defaultValue={data.downPayment}
-        min={0}
+        min={10000}
         max={data.homeValue}
         label="Down Payment"
         unit="$"
         amount={data.downPayment}
         value={data.downPayment}
-        steps={100} />
+        steps={10000} />
       <SliderComponent
         onChange={(e, value) => {
           setData({
@@ -53,7 +53,7 @@ const SliderSelect = ({ data, setData }) => {
         unit="$"
         amount={data.loanAmount}
         value={data.loanAmount}
-        steps={100} />
+        steps={10000} />
       <SliderComponent
         onChange={(e, value) => {
           setData({
