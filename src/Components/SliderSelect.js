@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SliderComponent from "./Common/SliderComponent";
 
 const SliderSelect = ({ data, setData, formattedData, setFormattedData }) => {
-  const bank_limit = 5000000;
+  const bank_limit = 3000000;
   const formattedBankLimit = bank_limit.toLocaleString("en-US");
 
   return (
@@ -28,7 +28,7 @@ const SliderSelect = ({ data, setData, formattedData, setFormattedData }) => {
         unit="$"
         amount={data.homeValue}
         value={data.homeValue}
-        steps={50000}
+        steps={25000}
         formattedAmount={formattedData.formattedHomeValue}
         formattedMax={formattedBankLimit} />
 
