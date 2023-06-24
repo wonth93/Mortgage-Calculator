@@ -92,14 +92,14 @@ const SliderSelect = ({ data, setData, formattedData, setFormattedData }) => {
         }}
         defaultValue={data.interestRate}
         min={2}
-        max={18}
+        max={10}
         label="Interest Rate"
         percent = "%"
         amount={data.interestRate}
         value={data.interestRate}
-        steps={0.5}
+        steps={0.05}
         formattedAmount={data.interestRate}
-        formattedMax={18} />
+        formattedMax={10} />
     </div>
   );
 }

@@ -2,7 +2,6 @@ import React from "react";
 import { Stack, Typography } from "@mui/material";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
-import { yellow } from "@mui/material/colors";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -18,14 +17,19 @@ const Result = ({ data }) => {
     datasets: [{
       label: 'Ratio of Principle and Interest',
       data: [homeValue, totalInterestGenerated],
-      backgroundColor: ['rgba(160, 160, 160, 0.2)', 'rgba(255, 0, 0, 0.1)'],
-      borderColor: ['rgba(160, 160, 160, 0.2)', 'rgba(255, 0, 0, 0.1)'],
+      backgroundColor: ['rgb(102, 102, 255)', 'rgba(0, 0, 204, 0.5)'],
+      borderColor: ['rgb(102, 102, 255)', 'rgba(0, 0, 204, 0.1)']
     }]
   }
 
   return (
     <div>
-      <Typography variant="h6" textAlign="center">Your Monthly Paypment: $ {monthlyPayment.toFixed(2).toLocaleString("en-US")}</Typography>
+      <Stack direction='row' justifyContent='center'>
+        <Typography variant="h6">
+          Your Estimated Monthly Paypment: $
+        </Typography>
+        <Typography variant="h6" style={{ textDecoration: 'underline' }}>{monthlyPayment.toFixed(2).toLocaleString("en-US")}</Typography>
+      </Stack>
       <Pie data={pieData} />
     </div>
   );
