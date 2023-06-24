@@ -14,15 +14,18 @@ const Result = ({ data }) => {
   const totalInterestGenerated = monthlyPayment * totalLoanMonths - loanAmount;
   
   const pieData = {
-    labels: ['Red', 'Blue', 'yellow'],
+    labels: ['Principle', 'Interest'],
     datasets: [{
-      data: [10, 20, 30],
-      backgroundColor: ['#ff6384', '#36a2eb', '#ffce56']
+      label: 'Ratio of Principle and Interest',
+      data: [homeValue, totalInterestGenerated],
+      backgroundColor: ['rgba(160, 160, 160, 0.2)', 'rgba(255, 0, 0, 0.1)'],
+      borderColor: ['rgba(160, 160, 160, 0.2)', 'rgba(255, 0, 0, 0.1)'],
     }]
   }
 
   return (
     <div>
+      <Typography variant="h6" textAlign="center">Your Monthly Paypment: $ {monthlyPayment.toFixed(2).toLocaleString("en-US")}</Typography>
       <Pie data={pieData} />
     </div>
   );
