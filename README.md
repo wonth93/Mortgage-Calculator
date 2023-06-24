@@ -13,4 +13,6 @@ This app was bulit by JavaScript using
 
 ![Dark Mode](/media/DarkMode.png)
 
+![Info](/media/Screenshot.png)
+
 ![Lihgt Mode](/media/LightMode.png)
