@@ -1,11 +1,15 @@
 import React from "react";
-import { Slider, Typography, Stack } from "@mui/material";
+import { Info } from "@mui/icons-material";
+import { Slider, Typography, Stack, Tooltip } from "@mui/material";
 
-const SliderComponent = ({defaultValue, min, max, label, unit, onChange, amount, value, steps, formattedAmount, formattedMax, percent}) => {
+const SliderComponent = ({defaultValue, min, max, label, unit, onChange, amount, value, steps, formattedAmount, formattedMax, percent, message}) => {
   return (
     <Stack my={1.4}>
       <Stack gap={1}>
-        <Typography variant="subtitle1">{label}</Typography>
+        <Stack direction='row' spacing={1}>
+          <Typography variant="subtitle1">{label}</Typography>
+          <Tooltip title={message}><Info /></Tooltip>
+        </Stack>
         <Typography variant="h5">{unit} {formattedAmount} {percent}</Typography>
       </Stack>
       <Slider 

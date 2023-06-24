@@ -22,7 +22,7 @@ function App({ dark }) {
     homeValue: 300000,
     downPayment: 300000 * 0.2,
     loanAmount: 300000 * 0.8,
-    loanTerm: 5,
+    loanTerm: 25,
     interestRate: 5,
   });
 

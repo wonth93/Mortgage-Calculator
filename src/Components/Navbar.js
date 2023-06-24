@@ -13,7 +13,7 @@ const Navbar = () => {
         <Grid container direction="row" justifyContent="space-between" alignItems="center">
           <Toolbar>
             <Typography variant="h4">
-              Creating a mortgage Calculator!
+              Mortgage Payment Calculator
             </Typography>
           </Toolbar>
           <FormGroup>

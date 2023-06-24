@@ -30,7 +30,8 @@ const SliderSelect = ({ data, setData, formattedData, setFormattedData }) => {
         value={data.homeValue}
         steps={25000}
         formattedAmount={formattedData.formattedHomeValue}
-        formattedMax={formattedBankLimit} />
+        formattedMax={formattedBankLimit}
+        message="Purchase price of the property." />
 
 
       <SliderComponent
@@ -55,7 +56,8 @@ const SliderSelect = ({ data, setData, formattedData, setFormattedData }) => {
         value={data.downPayment}
         steps={10000}
         formattedAmount={formattedData.formattedDownPayment}
-        formattedMax={formattedData.formattedHomeValue} />
+        formattedMax={formattedData.formattedHomeValue}
+        message="A down payment is the amount of money, including deposit, you put towards the purchase price of a property." />
 
 
       <SliderComponent
@@ -80,7 +82,8 @@ const SliderSelect = ({ data, setData, formattedData, setFormattedData }) => {
         value={data.loanAmount}
         steps={10000}
         formattedAmount={formattedData.formattedLoanAmount}
-        formattedMax={formattedData.formattedHomeValue} />
+        formattedMax={formattedData.formattedHomeValue}
+        message='This is the amoount of money that you are borrowing.' />
 
 
       <SliderComponent
@@ -99,7 +102,8 @@ const SliderSelect = ({ data, setData, formattedData, setFormattedData }) => {
         value={data.interestRate}
         steps={0.05}
         formattedAmount={data.interestRate}
-        formattedMax={10} />
+        formattedMax={10}
+        message='Interest is the money you pay to your lender for using the funds you borrow.' />
     </div>
   );
 }
