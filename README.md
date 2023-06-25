@@ -2,7 +2,7 @@
 
 A calculator for you to calculate what your mortgage payment could be.
 
-This app was bulit by JavaScript using
+This app was built by JavaScript using
 * React
 * Chart.js
 * MUI
